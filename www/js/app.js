@@ -46,6 +46,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'DashCtrl'
       }
     }
+  })
+  .state('home.login', {
+    url: '/login',
+    views: {
+      'welcome': {
+        templateUrl: 'templates/login.html',
+        controller: 'DashCtrl'
+      }
+    }
   })  
   
   $urlRouterProvider.otherwise('home/welcome');
