@@ -32,42 +32,59 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('home', {
-    url: '/home',
-    abstract: true,
-    templateUrl: 'templates/home.html'
-  })
-
-  .state('home.welcome', {
+  .state('welcome', {
     url: '/welcome',
-    views: {
-      'welcome': {
-        templateUrl: 'templates/welcome.html',
-        controller: 'DashCtrl'
-      }
-    }
+    templateUrl: 'templates/welcome.html'
+    //abstract: true,
+  })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'loginController'
+  })
+
+  .state('transaction', {
+    url: '/transaction',
+    templateUrl: 'templates/transaction.html',
+    //controller: 'loginController'
   })
   
-  .state('home.login', {
-    url: '/login',
-    views: {
-      'welcome': {
-        templateUrl: 'templates/login.html',
-        controller: 'DashCtrl'
-      }
-    }
-  }) 
+  .state('create_transaction', {
+    url: '/create_transaction',
+    templateUrl: 'templates/create_transaction.html',
+    //controller: 'loginController'
+  })
 
-  .state('home.transaction', {
-    url: '/transaction',
-    views: {
-      'transaction': {
-        templateUrl: 'templates/transaction.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })  
+  // .state('home.welcome', {
+  //   url: '/welcome',
+  //   views: {
+  //     'welcome': {
+  //       templateUrl: 'templates/welcome.html',
+  //     }
+  //   }
+  // })
   
-  $urlRouterProvider.otherwise('home/welcome');
+  // .state('home.login', {
+  //   url: '/login',
+  //   views: {
+  //     'welcome': {
+  //       templateUrl: 'templates/login.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // }) 
+
+  // .state('home.transaction', {
+  //   url: '/transaction',
+  //   views: {
+  //     'transaction': {
+  //       templateUrl: 'templates/transaction.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // })  
+  
+  $urlRouterProvider.otherwise('welcome');
 
 });

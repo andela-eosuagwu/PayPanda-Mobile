@@ -1,24 +1,15 @@
 <ion-view view-title="Transaction">
-<div class="tabs tabs-icon-left">
-  <a class="tab-item">
-    <i class="icon ion-home"></i>
-    Home
-  </a>
-  <a class="tab-item">
-    <i class="icon ion-star"></i>
-    Favorites
-  </a>
-  <a class="tab-item">
-    <i class="icon ion-gear-a"></i>
-    Settings
-  </a>
-</div>
+    <ion-header-bar class="bar-header bar-positive">
+        <h1 class="title">Transactions</h1>
+        <a href = "#/create_transaction" class="button button-stable">Add</a>
+    </ion-header-bar>
 
     <ion-content class="padding">
         
         <div class="list">
-            <div class="item item-thumbnail-left">
+            <div class="item item-thumbnail-left" href="#">
                 <img src="img/pic.jpg">
+                <a href="#" class="remove-decor">
                 <h2>Emeka Osuagwu 
                     <span style ="float:right;"> 
                         <select>
@@ -30,29 +21,9 @@
                 </h2>
                 <p>iPhone 5c Purchase</p>
                 <p>Pendding</p>
+                </a>
                 
             </div>
         </div>
- 
-        <div class="list">
-            <div class="item item-thumbnail-left">
-                <img src="img/pic.jpg">
-                <h2>Emeka Osuagwu 
-                    <span style ="float:right;"> 
-                        <select>
-                          <option>Blue</option>
-                          <option selected>Green</option>
-                          <option>Red</option>
-                        </select>
-                    </span>
-                </h2>
-                <p>iPhone 5c Purchase</p>
-                <p>Pendding</p>
-                
-            </div>
-        </div>
-
-    
-
     </ion-content>
 </ion-view>

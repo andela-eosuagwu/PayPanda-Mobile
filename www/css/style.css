@@ -4,3 +4,11 @@
 {
 	width: 100%;
 }
+
+.remove-decor{
+	text-decoration: none;
+}
+
+.title-1{
+	text-align: center;
+}
