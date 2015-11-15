@@ -47,14 +47,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('transaction', {
     url: '/transaction',
     templateUrl: 'templates/transaction.html',
-    //controller: 'loginController'
+    controller: 'transactionController'
   })
-  
+
   .state('create_transaction', {
     url: '/create_transaction',
     templateUrl: 'templates/create_transaction.html',
-    //controller: 'loginController'
+    controller: 'transactionController'
   })
+
+  .state('view_transaction', {
+    url: '/view_transaction',
+    templateUrl: 'templates/view_transaction.html',
+    //controller: 'transactionController'
+  })
+
+  .state('logout', {
+    url: '/logout',
+    templateUrl: 'templates/logout.html',
+    controller: 'logoutController'
+  })
+
+
+
 
   // .state('home.welcome', {
   //   url: '/welcome',
