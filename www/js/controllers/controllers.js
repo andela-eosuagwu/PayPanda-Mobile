@@ -47,14 +47,8 @@ angular.module('starter.controllers', [])
     var ref = new Firebase("https://paypanda.firebaseio.com/" + localStorage.getItem("user") + "/transaction");
     ref.on("value", function(snapshot) 
     {
-        // snapshot.forEach(function(childSnapshot) {
-        //     var transactions = childSnapshot.val();
-        // })
-
-        console.log(snapshot.val())
-        
+        console.log(snapshot.val())   
         $scope.transactions = snapshot.val();
-
     }, 
     function (errorObject) {
       console.log("The read failed: " + errorObject.code);
@@ -72,6 +66,7 @@ angular.module('starter.controllers', [])
         postsRef.push().set({ 
             id          : Math.floor(Math.random()*1000),
             status      : "pending",
+            seller      : "PayPanda",
             title       : transaction_title, 
             amount      : transaction_amount,
             description : transaction_description 
