@@ -1,5 +1,7 @@
 angular.module('starter.controllers', [])
 
+
+
 .controller('loginController', function($scope) {
 
     var ref = new Firebase("https://paypanda.firebaseio.com");
@@ -32,20 +34,27 @@ angular.module('starter.controllers', [])
     }
 })
 
+
+
+
 .controller('logoutController', function($scope){
     logout()
 })
 
+
 .controller('transactionController', function($scope){
     checkUserExists();
-    var ref = new Firebase("https://paypanda.firebaseio.com/" + localStorage.getItem("user"));
+    var ref = new Firebase("https://paypanda.firebaseio.com/" + localStorage.getItem("user") + "/transaction");
     ref.on("value", function(snapshot) 
     {
-        $scope.transactions = snapshot.val().transaction;
+        // snapshot.forEach(function(childSnapshot) {
+        //     var transactions = childSnapshot.val();
+        // })
+
+        console.log(snapshot.val())
         
-        for (var i = $scope.transactions.length - 1; i >= 0; i--) {
-            console.log($scope.transactions)
-        };
+        $scope.transactions = snapshot.val();
+
     }, 
     function (errorObject) {
       console.log("The read failed: " + errorObject.code);
@@ -62,6 +71,7 @@ angular.module('starter.controllers', [])
         var transaction_description = document.getElementById('transaction_description').value;   
         postsRef.push().set({ 
             id          : Math.floor(Math.random()*1000),
+            status      : "pending",
             title       : transaction_title, 
             amount      : transaction_amount,
             description : transaction_description 
@@ -71,4 +81,6 @@ angular.module('starter.controllers', [])
         var transaction_amount      = document.getElementById('transaction_amount').value = "";
         var transaction_description = document.getElementById('transaction_description').value = "";      
     }
+
+
 })

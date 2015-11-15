@@ -8,9 +8,10 @@
     <ion-content class="padding">
         
         <div class="list" ng-repeat="transaction in transactions">
+            
             <div class="item item-thumbnail-left" href="#">
                 <img src="img/pic.jpg">
-                <a href="#" class="remove-decor">
+                <a href="#/transaction/{{transaction.id}}" class="remove-decor">
                 <h2>{{transaction.title}}
                     <span style ="float:right;"> 
                         <select>
@@ -20,8 +21,8 @@
                         </select>
                     </span>
                 </h2>
-                <p>iPhone 5c Purchase</p>
-                <p>Pendding</p>
+                <p>{{transaction.description}}</p>
+                <p>{{transaction.status}}</p>
                 </a>
                 
             </div>
