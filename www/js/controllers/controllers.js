@@ -101,12 +101,15 @@ angular.module('starter.controllers', [])
     var ref = new Firebase("https://paypanda.firebaseio.com/" + localStorage.getItem("user") + "/transaction");
     ref.on("value", function(snapshot) 
     {
-        console.log(snapshot.val())   
+        console.log(snapshot.val())
         $scope.transactions = snapshot.val();
     }, 
     function (errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
+
+
+
 
 
     $scope.createTransaction = function () 
@@ -128,7 +131,7 @@ angular.module('starter.controllers', [])
 
         var ref                     = new Firebase("https://paypanda.firebaseio.com");
         var user                    = 'paypanda';
-        var postsRef                = ref.child( user + '/transaction');
+        var postsRef                = ref.child( user + '/transaction/rfkwkerfdjfh');
         var transaction_title       = document.getElementById('transaction_title').value;
         var transaction_amount      = document.getElementById('transaction_amount').value;
         var transaction_description = document.getElementById('transaction_description').value;   
@@ -151,9 +154,18 @@ angular.module('starter.controllers', [])
         alert('transaction created');
     }
 
-    $scope.approve = function function_name () 
+    $scope.approve = function ($id) 
     {
-      alert('vjdfvfdg')
+        alert('hjf')
+        var ref = new Firebase("https://paypanda.firebaseio.com/paypanda/transaction");
+        ref.on("value", function(snapshot) 
+        {
+            console.log(snapshot.key())   
+            $scope.transactions = snapshot.val();
+        }, 
+        function (errorObject) {
+          console.log("The read failed: " + errorObject.code);
+        });
     }
 
 })

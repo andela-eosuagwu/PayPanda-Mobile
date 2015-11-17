@@ -75,34 +75,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 
-  // .state('home.welcome', {
-  //   url: '/welcome',
-  //   views: {
-  //     'welcome': {
-  //       templateUrl: 'templates/welcome.html',
-  //     }
-  //   }
-  // })
-  
-  // .state('home.login', {
-  //   url: '/login',
-  //   views: {
-  //     'welcome': {
-  //       templateUrl: 'templates/login.html',
-  //       controller: 'DashCtrl'
-  //     }
-  //   }
-  // }) 
-
-  // .state('home.transaction', {
-  //   url: '/transaction',
-  //   views: {
-  //     'transaction': {
-  //       templateUrl: 'templates/transaction.html',
-  //       controller: 'DashCtrl'
-  //     }
-  //   }
-  // })  
   
   $urlRouterProvider.otherwise('welcome');
 
