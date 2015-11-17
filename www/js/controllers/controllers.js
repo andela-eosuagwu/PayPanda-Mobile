@@ -30,7 +30,15 @@ angular.module('starter.controllers', [])
     {
       localStorage.setItem("user", user);
       localStorage.setItem("balance", money);
-      window.location = "/";
+      
+      if (localStorage.getItem("user") === 'paypanda') 
+      {
+          window.location = "#/panda_transaction";
+      }
+      else
+      {
+          window.location = "#/transaction";
+      }
     }
 })
 
@@ -42,8 +50,54 @@ angular.module('starter.controllers', [])
 })
 
 
+.controller('createController', function($scope){
+    $scope.createTransaction = function () 
+    {
+        var ref                     = new Firebase("https://paypanda.firebaseio.com");
+        var user                    = localStorage.getItem("user");
+        var postsRef                = ref.child( user + '/transaction');
+        var transaction_title       = document.getElementById('transaction_title').value;
+        var transaction_amount      = document.getElementById('transaction_amount').value;
+        var transaction_description = document.getElementById('transaction_description').value;   
+        postsRef.push().set({ 
+            id          : Math.floor(Math.random()*1000),
+            status      : "pending",
+            seller      : "PayPanda",
+            title       : transaction_title, 
+            amount      : transaction_amount,
+            description : transaction_description 
+        });
+
+        var ref                     = new Firebase("https://paypanda.firebaseio.com");
+        var user                    = 'paypanda';
+        var postsRef                = ref.child( user + '/transaction');
+        var transaction_title       = document.getElementById('transaction_title').value;
+        var transaction_amount      = document.getElementById('transaction_amount').value;
+        var transaction_description = document.getElementById('transaction_description').value;   
+        postsRef.push().set({ 
+            id          : Math.floor(Math.random()*1000),
+            status      : "pending",
+            seller       : localStorage.getItem("user"),
+            title       : transaction_title, 
+            amount      : transaction_amount,
+            description : transaction_description 
+        });
+
+
+
+
+
+        var transaction_title       = document.getElementById('transaction_title').value = "";
+        var transaction_amount      = document.getElementById('transaction_amount').value = "";
+        var transaction_description = document.getElementById('transaction_description').value = "";      
+        alert('transaction created');
+    }
+})
+
+
 .controller('transactionController', function($scope){
     checkUserExists();
+
     var ref = new Firebase("https://paypanda.firebaseio.com/" + localStorage.getItem("user") + "/transaction");
     ref.on("value", function(snapshot) 
     {
@@ -72,11 +126,34 @@ angular.module('starter.controllers', [])
             description : transaction_description 
         });
 
+        var ref                     = new Firebase("https://paypanda.firebaseio.com");
+        var user                    = 'paypanda';
+        var postsRef                = ref.child( user + '/transaction');
+        var transaction_title       = document.getElementById('transaction_title').value;
+        var transaction_amount      = document.getElementById('transaction_amount').value;
+        var transaction_description = document.getElementById('transaction_description').value;   
+        postsRef.push().set({ 
+            id          : Math.floor(Math.random()*1000),
+            status      : "pending",
+            seller       : localStorage.getItem("user"),
+            title       : transaction_title, 
+            amount      : transaction_amount,
+            description : transaction_description 
+        });
+
+
+
+
+
         var transaction_title       = document.getElementById('transaction_title').value = "";
         var transaction_amount      = document.getElementById('transaction_amount').value = "";
         var transaction_description = document.getElementById('transaction_description').value = "";      
-        alert('Transaction created')
+        alert('transaction created');
     }
 
+    $scope.approve = function function_name () 
+    {
+      alert('vjdfvfdg')
+    }
 
 })
