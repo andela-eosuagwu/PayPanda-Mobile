@@ -2,7 +2,7 @@
     <ion-header-bar class="bar-header bar-positive">
         <a href="#/logout" class="button button button-stable ">Logout</a>
         <h1 class="title">Transactions</h1>
-        <a href = "#/create_transaction" class="button button-stable">Add</a>
+        <a href = "#/panda_transaction" class="button button-stable">Add</a>
     </ion-header-bar>
 
     <ion-content class="padding" ng-controller = "transactionController">
@@ -13,7 +13,7 @@
                 <img src="img/pic.jpg">
                 <div class="remove-decor">
                     <h2>Title: <span class="remove-decor">{{transaction.title}}</span></h2>
-                    <h2>Seller Name: <span class="remove-decor">{{transaction.seller}}</span></h2>
+                    <h2>Buyer Name: <span class="remove-decor">{{transaction.seller}}</span></h2>
                     <h2>Description: <span class="remove-decor">{{transaction.description}}</span></h2>
                     <h2>Amount: <span class="remove-decor">{{transaction.amount}}</span></h2>
                     <h2>Status: <span class="remove-decor">{{transaction.status}}</span></h2>

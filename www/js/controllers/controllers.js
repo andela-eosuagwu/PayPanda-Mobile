@@ -33,11 +33,11 @@ angular.module('starter.controllers', [])
       
       if (localStorage.getItem("user") === 'paypanda') 
       {
-          window.location = "#/panda_transaction";
+          window.location = "#/transaction";
       }
       else
       {
-          window.location = "#/transaction";
+          window.location = "#/panda_transaction";
       }
     }
 })
@@ -156,7 +156,7 @@ angular.module('starter.controllers', [])
 
     $scope.approve = function ($id) 
     {
-        alert('hjf')
+        alert('new transaction')
         var ref = new Firebase("https://paypanda.firebaseio.com/paypanda/transaction");
         ref.on("value", function(snapshot) 
         {
