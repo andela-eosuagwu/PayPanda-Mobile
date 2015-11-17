@@ -75,6 +75,7 @@ angular.module('starter.controllers', [])
         var transaction_title       = document.getElementById('transaction_title').value = "";
         var transaction_amount      = document.getElementById('transaction_amount').value = "";
         var transaction_description = document.getElementById('transaction_description').value = "";      
+        alert('Transaction created')
     }
 
 

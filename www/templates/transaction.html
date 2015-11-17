@@ -10,14 +10,14 @@
         <div class="list" ng-repeat="transaction in transactions">
             
             <div class="item item-thumbnail-left" href="#">
-                    <img src="img/pic.jpg">
-                <a href="#/transaction/{{transaction.id}}" class="remove-decor">
-                    <h2>Seller Name: {{transaction.seller}}
-                    <h2>{{transaction.title}}</h2>
-                    <p>{{transaction.description}}</p>
-                    <p>{{transaction.description}}</p>
-                    <p>{{transaction.status}}</p>
-                </a>
+                <img src="img/pic.jpg">
+                <div class="remove-decor">
+                    <h2>Title: <span class="remove-decor">{{transaction.title}}</span></h2>
+                    <h2>Seller Name: <span class="remove-decor">{{transaction.seller}}</span></h2>
+                    <h2>Description: <span class="remove-decor">{{transaction.description}}</span></h2>
+                    <h2>Amount: <span class="remove-decor">{{transaction.amount}}</span></h2>
+                    <h2>Status: <span class="remove-decor">{{transaction.status}}</span></h2>
+                </div>
                 
             </div>
         </div>
